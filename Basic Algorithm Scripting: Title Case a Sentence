@@ -1,0 +1,32 @@
+Basic Algorithm Scripting: Title Case a Sentence
+
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+
+function titleCase(str) {
+
+let lowerCaseString = str.toLowerCase().split(' ')
+   
+let arrayOfUpperCase = []
+
+for (let i = 0; i < lowerCaseString.length; i++){
+  arrayOfUpperCase.push(cap(lowerCaseString[i]))
+}
+ function cap(word) {
+   return word = word.charAt(0).toUpperCase(0) + word.slice(1)
+}
+
+  return arrayOfUpperCase.join(' ');
+}
+
+titleCase("I'm a little tea pot");
+
+Test Criteria - 
+titleCase("I'm a little tea pot") should return a string.
+Passed
+titleCase("I'm a little tea pot") should return I'm A Little Tea Pot.
+Passed
+titleCase("sHoRt AnD sToUt") should return Short And Stout.
+Passed
+titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return Here Is My Handle Here Is My Spout.
