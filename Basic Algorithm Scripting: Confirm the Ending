@@ -1,0 +1,49 @@
+function confirmEnding(str, target) {
+
+    let compareValue = []
+    let result;
+    
+    let startValue = str.length-1
+    //This provides the for loop a start value of the length of the string and allows the loop to iterate through the string in reverse.
+    
+    let iteratorValue = str.length - target.length
+    //This provides the for loop a check to ensure the loop only iterates the same amount of times as the length of the 'target' string. This prevents having to filter out any unecessary characters from our array.
+  
+    for (startValue; startValue >= iteratorValue; startValue--){
+      compareValue.push(str[startValue])
+    }
+    //for loop to push the characters of str in reverse to the compare array. With the variables provided for the iteration the loop will iterate through the provided 'str' string and push characters to the array equal to the length of the 'target' variable.
+
+    compareValue = compareValue.reverse().join('')
+    //As the for loop pushed the characters of str in reverse the contents in the array will need revsersing and then apply join to turn the array into a string.
+
+    target === compareValue ? result = true : result = false
+    //tenary to check if the compare matches the target
+    
+  return result
+}
+
+confirmEnding("Bastian", "an");
+
+Test Critera - 
+onfirmEnding("Bastian", "n") should return true.
+Passed
+confirmEnding("Congratulation", "on") should return true.
+Passed
+confirmEnding("Connor", "n") should return false.
+Passed
+confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification") should return false.
+Passed
+confirmEnding("He has to give me a new name", "name") should return true.
+Passed
+confirmEnding("Open sesame", "same") should return true.
+Passed
+confirmEnding("Open sesame", "pen") should return false.
+Passed
+confirmEnding("Open sesame", "game") should return false.
+Passed
+confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") should return false.
+Passed
+confirmEnding("Abstraction", "action") should return true.
+Passed
+Do not use the built-in method .endsWith() to solve the challenge.
